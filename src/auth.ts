@@ -19,7 +19,7 @@ export interface AuthUser {
 const users = new Map<string, StoredUser>();
 
 async function deriveKey(password: string, salt: string): Promise<Buffer> {
-  return scryptAsync(password, salt, 64) as Promise<Buffer>;
+  return await scryptAsync(password, salt, 64) as Promise<Buffer>;
 }
 
 export async function register(

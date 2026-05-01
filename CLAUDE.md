@@ -21,11 +21,7 @@ This is a TypeScript ESM (ECMAScript Modules) project for Node.js running a Fast
 
 - `index.ts` — Entry point: starts the Fastify server on port 3000.
 - `server.ts` — Builds and configures the Fastify app instance, registers route plugins.
-- `routes/math.ts` — API routes for math operations (`/api/math/add`, `/api/math/multiply`, `/api/math/divide`).
-- `routes/greeting.ts` — API routes for greetings (`/api/greeting/:name`).
 - `types.ts` — Type-only exports (branded primitives, `Result<T,E>` discriminated union). Uses `export type` exclusively; nothing survives to runtime output.
-- `math.ts` — Named exports: `add`, `multiply`, `safeDivide`, `PI`.
-- `greeting.ts` — Default export (`Greeter` class) alongside a named export (`formatGreeting`).
 
 ### API endpoints
 
