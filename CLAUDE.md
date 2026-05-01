@@ -25,12 +25,10 @@ This is a TypeScript ESM (ECMAScript Modules) project for Node.js running a Fast
 
 ### API endpoints
 
-| Method | Path | Query / Params | Description |
-|--------|------|----------------|-------------|
-| GET | `/api/math/add` | `?a=&b=` | Add two numbers |
-| GET | `/api/math/multiply` | `?a=&b=` | Multiply two numbers |
-| GET | `/api/math/divide` | `?a=&b=` | Divide (returns 400 on division by zero) |
-| GET | `/api/greeting/:name` | `:name` | Greet by name |
+| Method | Path | Body | Description |
+|--------|------|------|-------------|
+| POST | `/api/auth/register` | `{ username, password }` | Register user, returns JWT (201) or conflict (409) |
+| POST | `/api/auth/login` | `{ username, password }` | Login, returns JWT (200) or unauthorized (401) |
 
 ### TypeScript config highlights
 
