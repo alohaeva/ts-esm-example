@@ -13,16 +13,28 @@ npm run typecheck  # Type-check without emitting files
 
 ## Architecture
 
-This is an educational TypeScript ESM (ECMAScript Modules) example for Node.js, demonstrating correct ESM patterns and TypeScript configuration.
+This is a TypeScript ESM (ECMAScript Modules) project for Node.js running a Fastify HTTP server.
 
 **Key ESM rule:** Import paths must use `.js` extensions even in `.ts` source files — the specifier must match the compiled output filename. TypeScript resolves `.js` → `.ts` at compile time.
 
 ### Source files (`src/`)
 
+- `index.ts` — Entry point: starts the Fastify server on port 3000.
+- `server.ts` — Builds and configures the Fastify app instance, registers route plugins.
+- `routes/math.ts` — API routes for math operations (`/api/math/add`, `/api/math/multiply`, `/api/math/divide`).
+- `routes/greeting.ts` — API routes for greetings (`/api/greeting/:name`).
 - `types.ts` — Type-only exports (branded primitives, `Result<T,E>` discriminated union). Uses `export type` exclusively; nothing survives to runtime output.
-- `math.ts` — Named exports demonstrating the most common ESM pattern.
-- `greeting.ts` — Default export (class) alongside a named export (function) in the same file.
-- `index.ts` — Dual-purpose: barrel re-exports for library consumers + runnable demo entry point. Shows all import patterns: named, default, type-only, and re-exports.
+- `math.ts` — Named exports: `add`, `multiply`, `safeDivide`, `PI`.
+- `greeting.ts` — Default export (`Greeter` class) alongside a named export (`formatGreeting`).
+
+### API endpoints
+
+| Method | Path | Query / Params | Description |
+|--------|------|----------------|-------------|
+| GET | `/api/math/add` | `?a=&b=` | Add two numbers |
+| GET | `/api/math/multiply` | `?a=&b=` | Multiply two numbers |
+| GET | `/api/math/divide` | `?a=&b=` | Divide (returns 400 on division by zero) |
+| GET | `/api/greeting/:name` | `:name` | Greet by name |
 
 ### TypeScript config highlights
 
