@@ -14,5 +14,11 @@
     "@types/node": "^25.6.0",
     "tsx": "^4.21.0",
     "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "@fastify/jwt": "^10.0.0",
+    "@fastify/type-provider-typebox": "^6.1.0",
+    "@sinclair/typebox": "^0.34.49",
+    "fastify": "^5.8.5"
   }
 }
