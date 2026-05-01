@@ -1,0 +1,18 @@
+{
+  "name": "ts-esm-example",
+  "version": "1.0.0",
+  "description": "An educational example of TypeScript with ECMAScript Modules (ESM) for Node.js",
+  "type": "module",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}
