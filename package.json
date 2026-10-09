@@ -8,7 +8,9 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "track": "tsx src/track.ts",
+    "test": "tsx --test \"src/**/*.test.ts\""
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
